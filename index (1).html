@@ -1,0 +1,3356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Freelancers | Professional Data Entry & Digital Support Office</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #050505;
+            --bg-secondary: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #1a1a1a;
+            --accent: #00d4ff;
+            --accent-light: #67e8f9;
+            --accent-dark: #0891b2;
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --shadow-cyan: 0 0 30px rgba(0, 212, 255, 0.4);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            --gradient-hero: radial-gradient(ellipse at top right, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+                var(--bg-primary);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-300);
+            background: var(--gradient-hero);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gradient-hero);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-accent);
+            border-radius: 5px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border-bottom-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .nav-link {
+            padding: 12px 22px;
+            text-decoration: none;
+            color: var(--gray-400);
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 60%;
+        }
+
+        .nav-cta {
+            padding: 12px 28px;
+            background: var(--gradient-accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-left: 12px;
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 40v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+
+        .hero-shape-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--accent);
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-dark);
+            bottom: -100px;
+            left: -100px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .hero-shape-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            top: 50%;
+            left: 30%;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.05);
+            }
+        }
+
+        /* Hero Shapes for all pages */
+        .about-hero-shapes,
+        .services-hero-shapes,
+        .team-hero-shapes,
+        .contact-hero-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+
+        .about-hero-shape,
+        .services-hero-shape,
+        .team-hero-shape,
+        .contact-hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+        }
+
+        .about-hero-shape-1,
+        .services-hero-shape-1,
+        .team-hero-shape-1,
+        .contact-hero-shape-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .about-hero-shape-2,
+        .services-hero-shape-2,
+        .team-hero-shape-2,
+        .contact-hero-shape-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-dark);
+            bottom: -50px;
+            left: -50px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 32px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            border-radius: 50px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-400);
+            line-height: 1.9;
+            margin-bottom: 44px;
+            max-width: 560px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--bg-primary);
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 28px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .hero-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-weight: 800;
+            font-size: 22px;
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .hero-card-info h4 {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .hero-card-info p {
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+
+        .hero-stats-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .hero-stat-item {
+            flex: 1;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-stat-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .hero-stat-value {
+            color: var(--accent);
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .hero-stat-label {
+            color: var(--gray-500);
+            font-size: 12px;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-progress {
+            margin-top: 24px;
+        }
+
+        .hero-progress-label {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-400);
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .hero-progress-bar {
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .hero-progress-fill {
+            height: 100%;
+            width: 98%;
+            background: var(--gradient-accent);
+            border-radius: 4px;
+            animation: progressFill 2.5s ease-out;
+            position: relative;
+        }
+
+        .hero-progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes progressFill {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 98%;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-20px);
+            }
+
+            100% {
+                transform: translateX(20px);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 32px;
+            position: relative;
+            background: var(--gradient-hero);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--gradient-hero);
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(0, 212, 255, 0.3);
+            background: var(--bg-card-hover);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            box-shadow: var(--shadow-cyan);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+        }
+
+        .feature-desc {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* Services */
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 36px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 255, 0.3);
+            background: var(--bg-card-hover);
+        }
+
+        .service-icon {
+            width: 68px;
+            height: 68px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient-accent);
+            box-shadow: var(--shadow-cyan);
+            transform: scale(1.1);
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+        }
+
+        .service-desc {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 14px;
+            color: var(--accent-light);
+        }
+
+        /* Team Preview */
+        .team-preview {
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 40v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .team-preview .section-label {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: var(--accent);
+        }
+
+        .team-preview .section-title {
+            color: var(--white);
+        }
+
+        .team-preview .section-subtitle {
+            color: var(--gray-500);
+        }
+
+        .team-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 28px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-12px);
+            background: var(--bg-card-hover);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .team-image-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .team-image {
+            width: 200px;
+            height: 260px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 4px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .team-card:hover .team-image {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .team-image-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            font-size: 15px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .team-bio {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .team-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .team-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .team-view-all {
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Statistics */
+        .stats {
+            background: var(--gradient-hero);
+            padding: 100px 32px;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .stat-value {
+            font-size: 56px;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--gradient-hero);
+            padding: 120px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            margin-bottom: 44px;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 120px;
+            color: rgba(0, 212, 255, 0.1);
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-stars span {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--gray-500);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .testimonial-info h5 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .testimonial-info p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--gradient-hero);
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+
+        .faq-item.active {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .faq-question {
+            padding: 28px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .faq-question:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .faq-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--accent);
+            transition: all 0.4s ease;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            background: var(--gradient-accent);
+            color: var(--bg-primary);
+            font-weight: 400;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer p {
+            padding: 0 32px 28px;
+            font-size: 16px;
+            color: var(--gray-500);
+            line-height: 1.8;
+        }
+
+        /* About Page */
+        .about-hero {
+            background: var(--gradient-hero);
+            padding: 180px 32px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 40v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .about-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about-hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 32px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-decoration {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: 30px;
+            bottom: 30px;
+            border: 3px solid var(--accent);
+            border-radius: 32px;
+            z-index: 0;
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 32px 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .about-image-badge-value {
+            font-size: 48px;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-image-badge-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            color: var(--gray-500);
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+
+        .mission-card {
+            background: var(--bg-card);
+            border-radius: 28px;
+            padding: 48px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .mission-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .mission-card p {
+            color: var(--gray-500);
+            font-size: 17px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* Services Page */
+        .services-hero {
+            background: var(--gradient-hero);
+            padding: 180px 32px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 40v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .services-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .services-hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-detail {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 32px;
+        }
+
+        .service-detail-card {
+            background: var(--bg-card);
+            border-radius: 28px;
+            padding: 48px;
+            margin-bottom: 36px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: start;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            transform: scaleY(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-detail-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            transform: translateX(8px);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .service-detail-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-detail-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+
+        .service-detail-card:hover .service-detail-icon {
+            background: var(--gradient-accent);
+            box-shadow: var(--shadow-cyan);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-detail-content h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .service-detail-content p {
+            font-size: 16px;
+            color: var(--gray-500);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .service-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .service-benefit {
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 50px;
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-benefit:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Team Page */
+        .team-hero {
+            background: var(--gradient-hero);
+            padding: 180px 32px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 40v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .team-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .team-hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 32px;
+        }
+
+        .team-full-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .team-profile-card {
+            background: var(--bg-card);
+            border-radius: 32px;
+            padding: 48px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .team-profile-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .team-profile-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .team-profile-image-wrapper {
+            position: relative;
+        }
+
+        .team-profile-image {
+            width: 260px;
+            height: 320px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .team-profile-card:hover .team-profile-image {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .team-profile-info h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .team-profile-role {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .team-profile-bio {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .team-profile-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .team-skill {
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--gray-500);
+            font-weight: 500;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-skill:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        .team-profile-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .team-profile-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #16a34a;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .team-contact-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .team-contact-title {
+            font-size: 13px;
+            color: var(--gray-600);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .team-social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .team-social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gray-500);
+            transition: all 0.3s ease;
+        }
+
+        .team-social-link span {
+            font-size: 13px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .team-social-link:hover {
+            background: var(--gradient-accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .team-social-link:hover svg {
+            fill: var(--bg-primary);
+        }
+
+        .team-social-link:hover span {
+            color: var(--bg-primary);
+            font-weight: 600;
+        }
+
+        /* Contact Page */
+        .contact-hero {
+            background: var(--gradient-hero);
+            padding: 180px 32px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.03'%3E%3Cpath d='M40 40v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 40v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .contact-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .contact-hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-500);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 32px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+        }
+
+        .contact-info-card {
+            background: var(--bg-card);
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-info-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .contact-info-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .contact-info-content p {
+            font-size: 16px;
+            color: var(--gray-500);
+        }
+
+        .contact-info-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-content a:hover {
+            color: var(--accent-light);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 24px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            border-radius: 28px;
+            padding: 48px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            border-radius: 14px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            color: var(--white);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--gradient-accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        .map-container {
+            margin-top: 60px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Floating Hire Button */
+        .floating-hire {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+        }
+
+        .floating-hire-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 32px;
+            background: var(--gradient-accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: var(--shadow-cyan);
+            transition: all 0.4s ease;
+            animation: floatBtn 4s ease-in-out infinite;
+        }
+
+        @keyframes floatBtn {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .floating-hire-btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.5);
+            animation: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-hero);
+            padding: 100px 32px 40px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-500);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-top: 24px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .footer-social a {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .footer-social a:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-cyan);
+        }
+
+        .footer-social svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--gray-500);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover svg {
+            fill: var(--bg-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            /* makes 3 rows */
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            /* spacing between lines */
+        }
+
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 15px;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .features-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-full-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--gradient-hero);
+                flex-direction: column;
+                padding: 32px;
+                gap: 12px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+                transform: translateY(-150%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-cta {
+                margin: 12px 0 0;
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .section-title,
+            .cta-title,
+            .about-hero-title,
+            .services-hero-title,
+            .team-hero-title,
+            .contact-hero-title {
+                font-size: 38px;
+            }
+
+            .features-grid,
+            .services-grid,
+            .stats-grid,
+            .testimonials-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-detail-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .service-detail-icon {
+                margin: 0 auto;
+            }
+
+            .team-profile-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .team-profile-image {
+                width: 220px;
+                height: 280px;
+                margin: 0 auto;
+            }
+
+            .team-social {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .floating-hire {
+                bottom: 24px;
+                right: 24px;
+            }
+
+            .floating-hire-btn {
+                padding: 16px 24px;
+                font-size: 15px;
+            }
+
+            .floating-hire-btn span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <div class="logo-icon">MF</div>
+                <div class="logo-text">Malik <span>Freelancers</span></div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" onclick="showPage('home')" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('about')" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('services')" data-page="services">Services</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('team')" data-page="team">Team</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('contact')" data-page="contact">Contact</a></li>
+            </ul>
+            <a href="#" class="nav-cta" onclick="showPage('contact')">Hire Our Team</a>
+            <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div id="home" class="page-section active">
+        <section class="hero">
+            <div class="hero-shapes">
+                <div class="hero-shape hero-shape-1"></div>
+                <div class="hero-shape hero-shape-2"></div>
+                <div class="hero-shape hero-shape-3"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">Professional Remote Office</div>
+                    <h1 class="hero-title">Professional Data Entry & <span class="highlight">Digital Workforce
+                            Solutions</span></h1>
+                    <p class="hero-subtitle">Delivering accuracy, efficiency, and reliability through a skilled remote
+                        team. We help businesses scale with structured digital support services that meet international
+                        standards.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact')">
+                            <span>Hire Our Team</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="showPage('team')">
+                            <span>View Our Experts</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="hero-card-header">
+                            <div class="hero-avatar">MF</div>
+                            <div class="hero-card-info">
+                                <h4>Malik Freelancers</h4>
+                                <p>Professional Data Office</p>
+                            </div>
+                        </div>
+                        <div class="hero-stats-row">
+                            <div class="hero-stat-item">
+                                <div class="hero-stat-value">500+</div>
+                                <div class="hero-stat-label">Projects</div>
+                            </div>
+                            <div class="hero-stat-item">
+                                <div class="hero-stat-value">100+</div>
+                                <div class="hero-stat-label">Clients</div>
+                            </div>
+                        </div>
+                        <div class="hero-progress">
+                            <div class="hero-progress-label"><span>Client Satisfaction</span><span>98%</span></div>
+                            <div class="hero-progress-bar">
+                                <div class="hero-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section why-choose">
+            <div class="section-header reveal">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">Built for Accuracy & Trust</h2>
+                <p class="section-subtitle">We combine professional expertise with structured workflows to deliver
+                    exceptional results for every project.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">100% Accuracy Focus</h3>
+                    <p class="feature-desc">Every task undergoes rigorous quality checks to ensure precision and
+                        error-free deliverables.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Confidential Data Handling</h3>
+                    <p class="feature-desc">Your data security is our priority. We follow strict confidentiality
+                        protocols.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast Turnaround</h3>
+                    <p class="feature-desc">Quick project completion without compromising on quality or accuracy.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Dedicated Team Support</h3>
+                    <p class="feature-desc">A structured team with clear communication channels for seamless
+                        collaboration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header reveal">
+                <span class="section-label">Our Services</span>
+                <h2 class="section-title">Comprehensive Digital Solutions</h2>
+                <p class="section-subtitle">From data entry to virtual assistance, we offer a full spectrum of
+                    professional services.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Data Entry</h3>
+                    <p class="service-desc">Accurate and efficient data entry services for all types of business
+                        information.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')">Learn More →</a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Lead Generation</h3>
+                    <p class="service-desc">Strategic lead research and qualified prospect identification for your
+                        business.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')">Learn More →</a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">📧</div>
+                    <h3 class="service-title">Email Collection</h3>
+                    <p class="service-desc">Targeted email research and verified contact list building services.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')">Learn More →</a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="service-title">Web Research</h3>
+                    <p class="service-desc">Comprehensive online research to gather valuable business intelligence.</p>
+                    <a href="#" class="service-link" onclick="showPage('services')">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section team-preview">
+            <div class="section-header reveal">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">Meet Our Experts</h2>
+                <p class="section-subtitle">A dedicated team of professionals ready to deliver exceptional results for
+                    your projects.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-image-wrapper">
+                        <div class="team-image-ring"></div>
+                        <img src="1.png" alt="Malik Shahid" class="team-image">
+                    </div>
+                    <h3 class="team-name">Malik Shahid</h3>
+                    <p class="team-role">Head of Office</p>
+                    <p class="team-bio">Founder and operational head managing client relationships and overseeing
+                        project execution.</p>
+                    <span class="team-status">Available for Projects</span>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-image-wrapper">
+                        <div class="team-image-ring"></div>
+                        <img src="2.png" alt="Malik Anas Ali" class="team-image">
+                    </div>
+                    <h3 class="team-name">Malik Anas Ali</h3>
+                    <p class="team-role">Senior Manager</p>
+                    <p class="team-bio">Expert in workflow management, quality assurance, and team coordination.</p>
+                    <span class="team-status">Available for Projects</span>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-image-wrapper">
+                        <div class="team-image-ring"></div>
+                        <img src="5.png" alt="Ali Malik" class="team-image">
+                    </div>
+                    <h3 class="team-name">Ali Malik</h3>
+                    <p class="team-role">Senior Data Specialist</p>
+                    <p class="team-bio">Specialized in data entry, lead generation, and web research with precision.</p>
+                    <span class="team-status">Available for Projects</span>
+                </div>
+            </div>
+            <div class="team-view-all reveal">
+                <a href="#" class="btn btn-primary" onclick="showPage('team')">View Full Team</a>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-icon">📁</div>
+                    <div class="stat-value" data-count="500">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-icon">🤝</div>
+                    <div class="stat-value" data-count="100">0</div>
+                    <div class="stat-label">Clients Served</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-icon">👨‍💼</div>
+                    <div class="stat-value" data-count="5">0</div>
+                    <div class="stat-label">Skilled Professionals</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-value" data-count="4">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta-content reveal">
+                <h2 class="cta-title">Ready to Scale Your Business?</h2>
+                <p class="cta-subtitle">Partner with a reliable remote team that delivers accuracy, efficiency, and
+                    professionalism on every project. Let's discuss how we can help you achieve your goals.</p>
+                <a href="#" class="btn btn-primary" onclick="showPage('contact')">Contact Us Now</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Trusted by businesses worldwide for reliable digital workforce solutions.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"Malik Freelancers delivered exceptional data entry work with 100%
+                        accuracy. Their team is professional, responsive, and always meets deadlines. Highly
+                        recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-info">
+                            <h5>John Davidson</h5>
+                            <p>CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"The lead generation services provided by Malik Freelancers helped us
+                        expand our client base significantly. Their research quality is outstanding."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div class="testimonial-info">
+                            <h5>Sarah Mitchell</h5>
+                            <p>Marketing Director, GrowthCo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"Working with Malik Freelancers has been a game-changer for our
+                        operations. Their virtual assistance services are top-notch and reliable."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RK</div>
+                        <div class="testimonial-info">
+                            <h5>Robert Kim</h5>
+                            <p>Founder, DataPro Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq">
+            <div class="section-header reveal">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our services and working process.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What types of projects do you handle?</h4>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We specialize in data entry, lead generation, web research, email collection, CRM management,
+                            virtual assistance, and file conversion. Our team is equipped to handle projects of various
+                            sizes and complexities.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How do you ensure data accuracy?</h4>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement a multi-layer quality assurance process including initial verification,
+                            cross-checking, and final review. Our team follows strict protocols to maintain 100%
+                            accuracy on all deliverables.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What is your typical turnaround time?</h4>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Turnaround time depends on project scope and complexity. We provide estimated timelines
+                            during project consultation and always strive to deliver ahead of schedule without
+                            compromising quality.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How do you handle data confidentiality?</h4>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We take data security seriously. All team members sign confidentiality agreements, and we
+                            follow strict protocols to ensure your information remains secure and private throughout the
+                            project.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>What are your payment terms?</h4>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer flexible payment options including per-project, hourly, and retainer arrangements.
+                            Payment terms are discussed and agreed upon before project commencement. We accept various
+                            payment methods for international clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="about" class="page-section">
+        <section class="about-hero">
+            <div class="about-hero-shapes">
+                <div class="about-hero-shape about-hero-shape-1"></div>
+                <div class="about-hero-shape about-hero-shape-2"></div>
+            </div>
+            <h1 class="about-hero-title">About Malik Freelancers</h1>
+            <p class="about-hero-subtitle">A professional remote office delivering excellence in digital workforce
+                solutions since 2020.</p>
+        </section>
+        <section class="about-content">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="about-image-decoration"></div>
+                    <div
+                        style="background: var(--bg-card); border-radius: 32px; height: 450px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; border: 1px solid rgba(0, 212, 255, 0.1);">
+                        <div style="text-align: center; color: white; padding: 50px;">
+                            <div style="font-size: 100px; margin-bottom: 24px;">🏢</div>
+                            <h3
+                                style="font-family: 'Cormorant Garamond', serif; font-size: 38px; margin-bottom: 12px; color: var(--white);">
+                                Malik Freelancers</h3>
+                            <p style="color: var(--gray-500); font-size: 18px;">Professional Data Office</p>
+                        </div>
+                    </div>
+                    <div class="about-image-badge">
+                        <div class="about-image-badge-value">4+</div>
+                        <div class="about-image-badge-label">Years of Excellence</div>
+                    </div>
+                </div>
+                <div class="about-text reveal">
+                    <h3>Your Trusted Digital Workforce Partner</h3>
+                    <p>Malik Freelancers is a professional remote office based in Noorwah Nala Ali Pur, Punjab,
+                        Pakistan. We operate as a structured digital support agency, handling international freelancing
+                        projects with professionalism and precision.</p>
+                    <p>Our office is built on the foundation of structured teamwork, clear communication, and delivering
+                        reliable results. Unlike individual freelancers, we offer a coordinated team approach that
+                        ensures consistent quality and scalable solutions for our clients.</p>
+                    <p>We specialize in data entry, lead generation, web research, and virtual assistance services. Our
+                        team of skilled professionals is dedicated to helping businesses streamline their operations and
+                        achieve their goals through accurate and efficient digital support.</p>
+                    <div class="mission-card">
+                        <h4>🎯 Our Mission</h4>
+                        <p>Our mission is to deliver reliable digital workforce solutions with precision, trust, and
+                            long-term partnership values. We strive to become the go-to remote office for businesses
+                            seeking professional data and digital support services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-icon">📁</div>
+                    <div class="stat-value" data-count="500">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-icon">🤝</div>
+                    <div class="stat-value" data-count="100">0</div>
+                    <div class="stat-label">Clients Served</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-icon">👨‍💼</div>
+                    <div class="stat-value" data-count="5">0</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-value" data-count="98">0</div>
+                    <div class="stat-label">% Satisfaction</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="services" class="page-section">
+        <section class="services-hero">
+            <div class="services-hero-shapes">
+                <div class="services-hero-shape services-hero-shape-1"></div>
+                <div class="services-hero-shape services-hero-shape-2"></div>
+            </div>
+            <h1 class="services-hero-title">Our Services</h1>
+            <p class="services-hero-subtitle">Comprehensive digital solutions designed to help your business grow and
+                succeed.</p>
+        </section>
+        <section class="services-detail">
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">📊</div>
+                <div class="service-detail-content">
+                    <h3>Data Entry</h3>
+                    <p>Our data entry services ensure accurate and efficient processing of all types of business
+                        information. From simple form filling to complex database management, we handle it all with
+                        precision and attention to detail.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ 100% Accuracy</span><span
+                            class="service-benefit">✓ Fast Turnaround</span><span class="service-benefit">✓ Secure
+                            Handling</span><span class="service-benefit">✓ Quality Checked</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">🎯</div>
+                <div class="service-detail-content">
+                    <h3>Lead Generation</h3>
+                    <p>Strategic lead research and qualified prospect identification to fuel your sales pipeline. We use
+                        advanced research techniques to find decision-makers and verify contact information.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Verified Contacts</span><span
+                            class="service-benefit">✓ Targeted Research</span><span class="service-benefit">✓ B2B
+                            Focused</span><span class="service-benefit">✓ High Conversion</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">📧</div>
+                <div class="service-detail-content">
+                    <h3>Email Collection</h3>
+                    <p>Targeted email research and verified contact list building services. We build comprehensive email
+                        lists tailored to your target market, ensuring high deliverability rates.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Verified Emails</span><span
+                            class="service-benefit">✓ Niche Targeting</span><span class="service-benefit">✓ Low Bounce
+                            Rate</span><span class="service-benefit">✓ GDPR Compliant</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">🔍</div>
+                <div class="service-detail-content">
+                    <h3>Web Research</h3>
+                    <p>Comprehensive online research to gather valuable business intelligence. Our team excels at
+                        finding accurate information quickly and presenting findings in a clear, actionable format.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Deep Research</span><span
+                            class="service-benefit">✓ Accurate Data</span><span class="service-benefit">✓ Organized
+                            Reports</span><span class="service-benefit">✓ Quick Delivery</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">⛏️</div>
+                <div class="service-detail-content">
+                    <h3>Data Mining</h3>
+                    <p>Extract valuable insights from large datasets with our data mining services. We identify
+                        patterns, trends, and opportunities hidden in your data to help you make informed business
+                        decisions.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Pattern Recognition</span><span
+                            class="service-benefit">✓ Trend Analysis</span><span class="service-benefit">✓ Insight
+                            Extraction</span><span class="service-benefit">✓ Structured Output</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">🗄️</div>
+                <div class="service-detail-content">
+                    <h3>CRM Management</h3>
+                    <p>Professional CRM data management to keep your customer relationships organized. We handle data
+                        entry, updates, cleaning, and organization across popular CRM platforms.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Data Cleaning</span><span
+                            class="service-benefit">✓ Regular Updates</span><span class="service-benefit">✓
+                            Multi-Platform</span><span class="service-benefit">✓ Sales Ready</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">💼</div>
+                <div class="service-detail-content">
+                    <h3>Virtual Assistance</h3>
+                    <p>Comprehensive administrative support to help you focus on what matters most. Our virtual
+                        assistants handle scheduling, email management, and various administrative tasks with
+                        professionalism.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Administrative Tasks</span><span
+                            class="service-benefit">✓ Email Management</span><span class="service-benefit">✓ Calendar
+                            Coordination</span><span class="service-benefit">✓ Flexible Hours</span></div>
+                </div>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">📄</div>
+                <div class="service-detail-content">
+                    <h3>File Conversion & Formatting</h3>
+                    <p>Professional document conversion and formatting services. We convert files between various
+                        formats and ensure consistent formatting across all your documents.</p>
+                    <div class="service-benefits"><span class="service-benefit">✓ Multi-Format Support</span><span
+                            class="service-benefit">✓ Consistent Styling</span><span class="service-benefit">✓
+                            Professional Layout</span><span class="service-benefit">✓ Quick Turnaround</span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="team" class="page-section">
+        <section class="team-hero">
+            <div class="team-hero-shapes">
+                <div class="team-hero-shape team-hero-shape-1"></div>
+                <div class="team-hero-shape team-hero-shape-2"></div>
+            </div>
+            <h1 class="team-hero-title">Meet Our Team</h1>
+            <p class="team-hero-subtitle">A dedicated team of professionals committed to delivering excellence on every
+                project.</p>
+        </section>
+        <section class="team-section">
+            <div class="team-full-grid">
+                <div class="team-profile-card reveal">
+                    <div class="team-profile-image-wrapper">
+                        <img src="1.png" alt="Malik Shahid" class="team-profile-image">
+                    </div>
+                    <div class="team-profile-info">
+                        <h3>Malik Shahid</h3>
+                        <p class="team-profile-role">Head of Office</p>
+                        <p class="team-profile-bio">Founder and operational head of Malik Freelancers, responsible for
+                            managing client relationships and overseeing project execution from start to completion.</p>
+                        <div class="team-profile-skills"><span class="team-skill">Operations Management</span><span
+                                class="team-skill">Client Communication</span><span class="team-skill">Project
+                                Supervision</span></div>
+                        <span class="team-profile-status">Available for Projects</span>
+                        <div class="team-contact-section">
+                            <div class="team-contact-title">Connect With Me</div>
+                            <div class="team-social">
+                                <a href="https://www.fiverr.com/s/XLA47xe" target="_blank" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 6h-6v2h6V6zm-6 4h6v2h-6v-2zm0 4h6v2h-6v-2zM12 4c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4V18h4v-6.6c1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zM8 20h8v2H8v-2z" />
+                                    </svg><span>Fiverr</span></a>
+                                <a href="https://www.linkedin.com/in/muhammad-shahid-a22b7a174" target="_blank" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg><span>LinkedIn</span></a>
+                                </a>
+                                <a href="https://malikshahid.portfolio.com" target="_blank" class="team-social-link" target="_blank"
+                                    aria-label="Portfolio Website">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                    </svg>
+                                    <span>Portfolio</span>
+                                </a>
+                                <a href="malikshahid64629@gmail.com" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                    </svg><span>Email</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-profile-card reveal">
+                    <div class="team-profile-image-wrapper">
+                        <img src="2.png" alt="Malik Anas Ali" class="team-profile-image">
+                    </div>
+                    <div class="team-profile-info">
+                        <h3>Malik Anas Ali</h3>
+                        <p class="team-profile-role">Data Entry Specialist</p>
+                        <p class="team-profile-bio">A dedicated data entry specialist known for maintaining accuracy and
+                            consistency across large-scale digital tasks and workflow organization.</p>
+                        <div class="team-profile-skills"><span class="team-skill">Workflow Management</span><span
+                                class="team-skill">Quality Assurance</span><span class="team-skill">Team
+                                Coordination</span></div>
+                        <span class="team-profile-status">Available for Projects</span>
+                        <div class="team-contact-section">
+                            <div class="team-contact-title">Connect With Me</div>
+                            <div class="team-social">
+                                <a href="https://www.fiverr.com/anasali188" target="_blank" class="team-social-link"><svg
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 6h-6v2h6V6zm-6 4h6v2h-6v-2zm0 4h6v2h-6v-2zM12 4c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4V18h4v-6.6c1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zM8 20h8v2H8v-2z" />
+                                    </svg><span>Fiverr</span></a>
+                                <a href="https://www.linkedin.com/in/anas-ali-56a45117a/" target="_blank" class="team-social-link"><svg
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg><span>LinkedIn</span></a>
+                                </a>
+                                <a href="#" class="team-social-link" target="_blank" aria-label="Portfolio Website">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                    </svg>
+                                    <span>Portfolio</span>
+                                </a>
+                                <a href="anasali8974@gmail.com" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                    </svg><span>Email</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-profile-card reveal">
+                    <div class="team-profile-image-wrapper">
+                        <img src="3.jpeg" alt="Rana Arsalan" class="team-profile-image">
+                    </div>
+                    <div class="team-profile-info">
+                        <h3>Rana Arsalan</h3>
+                        <p class="team-profile-role">Data Entry Specialist</p>
+                        <p class="team-profile-bio">Specializes in data entry operations, web research, and structured
+                            data handling. He focuses on organizing information clearly while maintaining speed and
+                            precision.</p>
+                        <div class="team-profile-skills"><span class="team-skill">Project Handling</span><span
+                                class="team-skill">Task Distribution</span><span class="team-skill">Performance
+                                Monitoring</span></div>
+                        <span class="team-profile-status">Available for Projects</span>
+                        <div class="team-contact-section">
+                            <div class="team-contact-title">Connect With Me</div>
+                            <div class="team-social">
+                                <a href="https://www.fiverr.com/engrusmanahmad" target="_blank" class="team-social-link"><svg
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 6h-6v2h6V6zm-6 4h6v2h-6v-2zm0 4h6v2h-6v-2zM12 4c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4V18h4v-6.6c1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zM8 20h8v2H8v-2z" />
+                                    </svg><span>Fiverr</span></a>
+                                <a href="https://www.linkedin.com/in/usman-ahmad-aa7234271" target="_blank"
+                                    class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg><span>LinkedIn</span></a>
+                                </a>
+                                <a href="#" class="team-social-link" target="_blank" aria-label="Portfolio Website">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                    </svg>
+                                    <span>Portfolio</span>
+                                </a>
+                                <a href="ranaarslanahmad@gmail.com"  class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                    </svg><span>Email</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-profile-card reveal">
+                    <div class="team-profile-image-wrapper">
+                        <img src="4.jpg" alt="Faraz Abbas" class="team-profile-image">
+                    </div>
+                    <div class="team-profile-info">
+                        <h3>Faraz Abbas</h3>
+                        <p class="team-profile-role">Data Entry Specialist</p>
+                        <p class="team-profile-bio">Works as a data entry specialist supporting administrative and data
+                            processing tasks. Experienced in document formatting and maintaining clean datasets.</p>
+                        <div class="team-profile-skills"><span class="team-skill">Administrative Support</span><span
+                                class="team-skill">Data Processing</span><span class="team-skill">Reporting</span></div>
+                        <span class="team-profile-status">Available for Projects</span>
+                        <div class="team-contact-section">
+                            <div class="team-contact-title">Connect With Me</div>
+                            <div class="team-social">
+                                <a href="fiverr.com/ruhikhan6" target="_blank" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 6h-6v2h6V6zm-6 4h6v2h-6v-2zm0 4h6v2h-6v-2zM12 4c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4V18h4v-6.6c1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zM8 20h8v2H8v-2z" />
+                                    </svg><span>Fiverr</span></a>
+                                <a href="https://www.linkedin.com/in/faraz-abbas-74ba5937a/" target="_blank"
+                                    class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg><span>LinkedIn</span></a>
+                                </a>
+                                <a href="https://itx-ali3321.github.io/Faraz-Abbas-Portfolio/" target="_blank" class="team-social-link"
+                                    target="_blank" aria-label="Portfolio Website">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                    </svg>
+                                    <span>Portfolio</span>
+                                </a>
+                                <a href="farazabbas896@gmail.com" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                    </svg><span>Email</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-profile-card reveal" style="grid-column: 1 / -1; max-width: 700px; margin: 0 auto;">
+                    <div class="team-profile-image-wrapper">
+                        <img src="5.png" alt="Ali Malik" class="team-profile-image">
+                    </div>
+                    <div class="team-profile-info">
+                        <h3>Ali Malik</h3>
+                        <p class="team-profile-role">Data Specialist & Web Developer</p>
+                        <p class="team-profile-bio">An experienced data entry specialist with strong skills in lead
+                            generation, web research, and data organization. Focuses on delivering accurate information
+                            that supports business decision-making.</p>
+                        <div class="team-profile-skills"><span class="team-skill">Data Entry</span><span
+                                class="team-skill">Lead Generation</span><span class="team-skill">Web
+                                Research</span><span class="team-skill">Web Development</span></div>
+                        <span class="team-profile-status">Available for Projects</span>
+                        <div class="team-contact-section">
+                            <div class="team-contact-title">Connect With Me</div>
+                            <div class="team-social">
+                                <a href="https://www.fiverr.com/razaservices_va" target="_blank" class="team-social-link"><svg
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M23 6h-6v2h6V6zm-6 4h6v2h-6v-2zm0 4h6v2h-6v-2zM12 4c-2.2 0-4 1.8-4 4 0 1.5.8 2.8 2 3.4V18h4v-6.6c1.2-.6 2-1.9 2-3.4 0-2.2-1.8-4-4-4zM8 20h8v2H8v-2z" />
+                                    </svg><span>Fiverr</span></a>
+                                <a href="https://web.facebook.com/profile.php?id=61583412861151" target="_blank"
+                                    class="team-social-link">
+
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8
+                                                c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.46h-1.26
+                                                c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10
+                                                10 0 0 0 22 12z" />
+                                    </svg>
+
+                                    <span>Facebook</span>
+                                </a>
+
+                                <a href="https://itx-ali3321.github.io/Raza.com/" target="_blank" class="team-social-link"
+                                    target="_blank" aria-label="Portfolio Website">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                    </svg>
+                                    <span>Portfolio</span>
+                                </a>
+                                <a href="itsali327442@gmail.com" class="team-social-link"><svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                    </svg><span>Email</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="contact" class="page-section">
+        <section class="contact-hero">
+            <div class="contact-hero-shapes">
+                <div class="contact-hero-shape contact-hero-shape-1"></div>
+                <div class="contact-hero-shape contact-hero-shape-2"></div>
+            </div>
+            <h1 class="contact-hero-title">Get In Touch</h1>
+            <p class="contact-hero-subtitle">Ready to start your project? Contact us today and let's discuss how we can
+                help your business grow.</p>
+        </section>
+        <section class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info-card reveal">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div class="contact-info-content">
+                            <h4>Office Location</h4>
+                            <p>Noorwah Nala Ali Pur, Punjab, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div class="contact-info-content">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+923036510745">+92 303 6510745</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">✉️</div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:malikshahid64629@gmail.com">malikshahid64629@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕐</div>
+                        <div class="contact-info-content">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 6:00 PM (PKT)</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923036510745" class="whatsapp-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+                <div class="contact-form reveal">
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group"><label class="form-label">Your Name</label><input type="text"
+                                class="form-input" placeholder="Enter your name" required></div>
+                        <div class="form-group"><label class="form-label">Email Address</label><input type="email"
+                                class="form-input" placeholder="Enter your email" required></div>
+                        <div class="form-group">
+                            <label class="form-label">Service Required</label>
+                            <select class="form-select" required>
+                                <option value="">Select a service</option>
+                                <option value="data-entry">Data Entry</option>
+                                <option value="lead-generation">Lead Generation</option>
+                                <option value="email-collection">Email Collection</option>
+                                <option value="web-research">Web Research</option>
+                                <option value="data-mining">Data Mining</option>
+                                <option value="crm-management">CRM Management</option>
+                                <option value="virtual-assistance">Virtual Assistance</option>
+                                <option value="file-conversion">File Conversion & Formatting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea"
+                                placeholder="Tell us about your project..." required></textarea></div>
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d846.7903120977159!2d70.96241526956537!3d29.48475016586478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDI5JzA1LjEiTiA3MMKwNTcnNDcuMCJF!5e1!3m2!1sen!2s!4v1771270201888!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="100%" height="400"
+                    style="border:0; border-radius:20px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </section>
+    </div>
+
+    <div class="floating-hire">
+        <a href="#" class="floating-hire-btn" onclick="showPage('contact')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span>Hire Us</span>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" onclick="showPage('home')">
+                    <div class="logo-icon">MF</div>
+                    <div class="logo-text">Malik <span>Freelancers</span></div>
+                </a>
+                <p>A professional remote office delivering accuracy, efficiency, and reliability through a skilled
+                    digital workforce based in Punjab, Pakistan.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                    <li><a href="#" onclick="showPage('services')">Services</a></li>
+                    <li><a href="#" onclick="showPage('team')">Our Team</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('services')">Data Entry</a></li>
+                    <li><a href="#" onclick="showPage('services')">Lead Generation</a></li>
+                    <li><a href="#" onclick="showPage('services')">Web Research</a></li>
+                    <li><a href="#" onclick="showPage('services')">Virtual Assistance</a></li>
+                    <li><a href="#" onclick="showPage('services')">CRM Management</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+923036510745">+92 303 6510745</a></li>
+                    <li><a href="mailto:malikshahid64629@gmail.com">malikshahid64629@gmail.com</a></li>
+                    <li><a href="#">Noorwah Nala Ali Pur</a></li>
+                    <li><a href="#">Punjab, Pakistan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 Malik Freelancers. All Rights Reserved.</p>
+            <p class="footer-copyright">Professional Data Entry & Digital Support Office</p>
+            <p class="footer-copyright">Developed and designed by<a href="https://itx-ali3321.github.io/Raza.com" target="_blank""> Ali
+                    Malik </a></p>
+
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageName) {
+            document.querySelectorAll('.page-section').forEach(page => { page.classList.remove('active'); });
+            document.getElementById(pageName).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageName) { link.classList.add('active'); }
+            });
+            document.getElementById('navMenu').classList.remove('active');
+            window.scrollTo(0, 0);
+            setTimeout(() => { revealElements(); if (pageName === 'home' || pageName === 'about') { animateCounters(); } }, 100);
+        }
+        document.getElementById('mobileToggle').addEventListener('click', function () { document.getElementById('navMenu').classList.toggle('active'); });
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+        });
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) { element.classList.add('active'); }
+            });
+        }
+        window.addEventListener('scroll', revealElements);
+        window.addEventListener('load', revealElements);
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-value[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) { counter.textContent = Math.floor(current) + '+'; requestAnimationFrame(updateCounter); }
+                    else { counter.textContent = target + '+'; }
+                };
+                updateCounter();
+            });
+        }
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => { item.classList.remove('active'); });
+            if (!isActive) { faqItem.classList.add('active'); }
+        }
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.\n\nAuto-reply: Your inquiry has been received by Malik Freelancers. Our team will review your requirements and contact you shortly.');
+            event.target.reset();
+        }
+        window.addEventListener('load', function () { revealElements(); animateCounters(); });
+    </script>
+</body>
+
+</html>
