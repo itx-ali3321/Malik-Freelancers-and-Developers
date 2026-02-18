@@ -123,27 +123,22 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 8px;
+            /* space between image and text */
             text-decoration: none;
         }
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg-primary);
-            font-weight: 800;
-            font-size: 20px;
-            box-shadow: var(--shadow-cyan);
+        .logo img {
+            width: 100px;
+            /* adjust width to fit nicely in nav */
+            height: auto;
+            /* maintain aspect ratio */
         }
 
         .logo-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
+            font-size: 20px;
+            /* smaller so it matches the logo */
             font-weight: 700;
             color: var(--white);
             letter-spacing: 0.5px;
@@ -152,6 +147,7 @@
         .logo-text span {
             color: var(--accent);
         }
+
 
         .nav-menu {
             display: flex;
@@ -2401,7 +2397,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo" onclick="showPage('home')">
-                <div class="logo-icon">MF</div>
+                <img src="logo.png" alt="logo" class="team-image">
                 <div class="logo-text">Malik <span>Freelancers</span></div>
             </a>
             <ul class="nav-menu" id="navMenu">
